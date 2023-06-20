@@ -4,8 +4,11 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const privatekey = process.env.PRIVATE_KEY as string;
 const id = process.env.INFURA_ID;
+
+function mnemonic() {
+  return process.env.PRIVATE_KEY!;
+}
 
 const config: HardhatUserConfig = {
   // hardhat sepolia
@@ -15,7 +18,7 @@ const config: HardhatUserConfig = {
     // },
     sepolia: {
       url: `https://sepolia.infura.io/v3/${id}`,
-      accounts: [privatekey],
+      accounts: [mnemonic()],
     },
   },
   solidity: "0.8.18",
