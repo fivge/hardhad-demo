@@ -9,3 +9,7 @@ graph codegen && graph build
 
 graph deploy --studio tg-01
 ```
+
+---
+
+<https://thegraph.com/docs/zh/cookbook/quick-start/>
