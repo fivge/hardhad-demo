@@ -1,13 +1,11 @@
-import { HardhatUserConfig, task } from "hardhat/config";
-import fs from "node:fs";
-
-// This file is only here to make interacting with the Dapp easier,
-// feel free to ignore it if you don't need it.
+import { task } from "hardhat/config";
+// import fs from "node:fs";
 
 task("faucet", "Sends ETH and tokens to an address")
   .addPositionalParam("receiver", "The address that will receive them")
   .setAction(async (taskArgs, hre) => {
     const { receiver } = taskArgs;
+
     if (hre.network.name === "hardhat") {
       console.warn(
         "You are running the faucet task with Hardhat network, which" +
@@ -16,16 +14,17 @@ task("faucet", "Sends ETH and tokens to an address")
       );
     }
 
-    const addressesFile =
-      __dirname + "/../frontend/src/contracts/contract-address.json";
+    // const addressesFile =
+    //   __dirname + "/../frontend/src/contracts/contract-address.json";
 
-    if (!fs.existsSync(addressesFile)) {
-      console.error("You need to deploy your contract first");
-      return;
-    }
+    // if (!fs.existsSync(addressesFile)) {
+    //   console.error("You need to deploy your contract first");
+    //   return;
+    // }
 
-    const addressJson = fs.readFileSync(addressesFile, { encoding: "utf-8" });
-    const address = JSON.parse(addressJson);
+    // const addressJson = fs.readFileSync(addressesFile, { encoding: "utf-8" });
+    // const address = JSON.parse(addressJson);
+    const address = { contractAddress: process.env.CONTRACT_ADDRESS! };
 
     if ((await hre.ethers.provider.getCode(address.contractAddress)) === "0x") {
       console.error("You need to deploy your contract first");
@@ -38,12 +37,12 @@ task("faucet", "Sends ETH and tokens to an address")
     );
     const [sender] = await hre.ethers.getSigners();
 
-    const tx = await token.transfer(receiver, 100);
+    const tx = await token.transfer(receiver, 1000000000000000000n);
     await tx.wait();
 
     const tx2 = await sender.sendTransaction({
       to: receiver,
-      value: hre.ethers.constants.WeiPerEther,
+      value: hre.ethers.WeiPerEther,
     });
     await tx2.wait();
 

@@ -12,8 +12,8 @@ function mnemonic() {
 }
 
 const config: HardhatUserConfig = {
-  // hardhat sepolia
-  // defaultNetwork: "sepolia",
+  // hardhat sepolia localhost
+  defaultNetwork: "localhost",
   networks: {
     // hardhat: {
     // },
