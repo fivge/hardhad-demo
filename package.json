@@ -24,6 +24,9 @@
     "typescript": ">=4.5.0"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.9.2"
+    "@helia/json": "^1.0.0",
+    "@helia/strings": "^1.0.0",
+    "@openzeppelin/contracts": "^4.9.2",
+    "helia": "^1.3.4"
   }
 }
