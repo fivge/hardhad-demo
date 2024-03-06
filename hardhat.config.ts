@@ -12,17 +12,25 @@ function mnemonic() {
 }
 
 const config: HardhatUserConfig = {
-  // hardhat sepolia localhost
+  // defaultNetwork: hardhat sepolia localhost
   defaultNetwork: "localhost",
   networks: {
-    // hardhat: {
-    // },
+    hardhat: {},
     sepolia: {
       url: `https://sepolia.infura.io/v3/${id}`,
       accounts: [mnemonic()],
     },
   },
-  solidity: "0.8.18",
+  solidity: "0.8.24",
+  // solidity: {
+  //   version: "0.8.24",
+  //   settings: {
+  //     optimizer: {
+  //       enabled: true,
+  //       runs: 200,
+  //     },
+  //   },
+  // },
 };
 
 task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
