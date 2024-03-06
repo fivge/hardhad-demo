@@ -11,8 +11,9 @@ yarn hardhat run scripts/deploy.ts
 yarn hardhat run scripts/deploy.ts --network localhost
 ```
 
-## 02
+## 02 任务和脚本
 
-https://hardhat.org/hardhat-runner/docs/guides/tasks-and-scripts
-
----
+```bash
+yarn hardhat accounts
+yarn hardhat run scripts/accounts.ts
+```
