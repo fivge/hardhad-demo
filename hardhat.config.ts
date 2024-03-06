@@ -1,5 +1,6 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "@nomicfoundation/hardhat-ignition-ethers";
 import dotenv from "dotenv";
 
 import "./tasks/start";
@@ -32,6 +33,12 @@ const config: HardhatUserConfig = {
   //       runs: 200,
   //     },
   //   },
+  // },
+  // ignition: {
+  //   blockPollingInterval: 1_000,
+  //   timeBeforeBumpingFees: 3 * 60 * 1_000,
+  //   maxFeeBumps: 4,
+  //   requiredConfirmations: 5,
   // },
 };
 

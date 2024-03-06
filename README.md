@@ -17,3 +17,9 @@ yarn hardhat run scripts/deploy.ts --network localhost
 yarn hardhat accounts
 yarn hardhat run scripts/accounts.ts
 ```
+
+## 03 hardhat ignition
+
+```bash
+yarn hardhat ignition deploy ignition/modules/Apollo.ts --network localhost
+```
