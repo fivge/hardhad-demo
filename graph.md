@@ -13,3 +13,7 @@ graph deploy --studio tg-01
 ---
 
 <https://thegraph.com/docs/zh/cookbook/quick-start/>
+
+```bash
+graph init tg-02 tg-02 --protocol ethereum --network sepolia --abi "./ignition/deployments/chain-11155111/artifacts/MTOKEN#SimpleToken.json" --from-contract 0xF887Ac1b01439475bD75904359A4CB741E640b93 --start-block 5441889 --studio
+```
