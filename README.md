@@ -23,3 +23,10 @@ yarn hardhat run scripts/accounts.ts
 ```bash
 yarn hardhat ignition deploy ignition/modules/Apollo.ts --network localhost
 ```
+
+## 04 `@openzeppelin/contracts`
+
+```bash
+yarn hardhat ignition deploy ignition/modules/MToken.ts --network sepolia
+yarn hardhat run scripts/deploy-simpletoken.ts  --network sepolia
+```
