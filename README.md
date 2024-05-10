@@ -50,3 +50,9 @@ graph deploy --studio tg-01
 Error: Failed to upload file to IPFS: fetch failed
 
 **GIVE UP**
+
+## 06 ~~Crowdsales 众筹~~
+
+`scripts/deploy_crowdfunding.ts`
+
+https://github.com/Dapp-Learning-DAO/Dapp-Learning/blob/main/basic/12-token-crowdfund/README-CN.md
